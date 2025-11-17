@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAJAR PORTFOLIO - L3 MIAGE</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: #f1f5f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(15, 23, 42, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .brand-text h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brand-text p {
+            margin: 0;
+            font-size: 11px;
+            color: #94a3b8;
+        }
+
+        .nav-link {
+            color: #cbd5e1 !important;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #60a5fa !important;
+        }
+
+        .dropdown-menu {
+            background: #1e293b !important;
+            border: 1px solid #475569 !important;
+            border-radius: 8px;
+        }
+
+        .dropdown-item {
+            color: #cbd5e1 !important;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: #334155 !important;
+            color: #60a5fa !important;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);
+            border-bottom: 1px solid rgba(71, 85, 105, 0.2);
+        }
+
+        .badge-header {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 20px;
+            color: #60a5fa;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        .btn-discover {
+            background: #2563eb;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-discover:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* ABOUT SECTION */
+        .about-section {
+            padding: 40px 20px;
+            background: #1e293b;
+        }
+
+        .about-box {
+            background: #334155;
+            border: 1px solid #475569;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .about-box h3 {
+            color: #60a5fa;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .about-box p {
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .about-box strong {
+            color: #f1f5f9;
+        }
+
+        .about-box ul {
+            list-style-position: inside;
+            color: #cbd5e1;
+            margin: 15px 0;
+        }
+
+        .about-box ul li {
+            margin: 8px 0;
+            margin-left: 20px;
+        }
+
+        /* RUBRIQUES SECTION */
+        .rubriques-section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .section-subtitle {
+            color: #94a3b8;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        .rubrique-card {
+            background: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #475569;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rubrique-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: #60a5fa;
+        }
+
+        .rubrique-header {
+            padding: 25px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .rubrique-header.tp { background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%); }
+        .rubrique-header.td { background: linear-gradient(135deg, #10b981 0%, #064e3b 100%); }
+        .rubrique-header.notes { background: linear-gradient(135deg, #f59e0b 0%, #92400e 100%); }
+        .rubrique-header.docs { background: linear-gradient(135deg, #a855f7 0%, #581c87 100%); }
+        .rubrique-header.projet { background: linear-gradient(135deg, #ec4899 0%, #831843 100%); }
+        .rubrique-header.diapo { background: linear-gradient(135deg, #6366f1 0%, #312e81 100%); }
+        .rubrique-header.ressources { background: linear-gradient(135deg, #06b6d4 0%, #164e63 100%); }
+
+        .rubrique-icon {
+            font-size: 28px;
+            opacity: 0.9;
+        }
+
+        .rubrique-count {
+            font-size: 12px;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        .rubrique-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .rubrique-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .rubrique-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .upload-area {
+            border: 2px dashed #475569;
+            border-radius: 8px;
+            padding: 30px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .upload-area:hover {
+            border-color: #60a5fa;
+            background: rgba(59, 130, 246, 0.05);
+            color: #60a5fa;
+        }
+
+        .upload-area i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .upload-text {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .github-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            background: #475569;
+            border: 1px solid #64748b;
+            border-radius: 6px;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .github-input::placeholder {
+            color: #94a3b8;
+        }
+
+        .files-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 12px;
+            background: #475569;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .file-item:hover {
+            background: #64748b;
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .file-info i {
+            color: #60a5fa;
+            font-size: 1.2rem;
+        }
+
+        .file-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .file-name {
+            color: white;
+            font-weight: 500;
+            word-break: break-all;
+        }
+
+        .file-meta {
+            color: #94a3b8;
+            font-size: 0.75rem;
+        }
+
+        .file-actions {
+            display: flex;
+            gap: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .file-item:hover .file-actions {
+            opacity: 1;
+        }
+
+        .btn-icon {
+            background: none;
+            border: none;
+            color: #cbd5e1;
+            cursor: pointer;
+            padding: 5px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-icon.download:hover {
+            color: #10b981;
+        }
+
+        .btn-icon.delete:hover {
+            color: #ef4444;
+        }
+
+        .no-files {
+            text-align: center;
+            color: #94a3b8;
+            padding: 20px 10px;
+            font-size: 0.9rem;
+        }
+
+        /* CERTIFICATIONS SECTION */
+        .certifications-section {
+            margin: 60px 0;
+            padding: 40px 20px;
+        }
+
+        .cert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .cert-header-left h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .cert-header-left p {
+            color: #94a3b8;
+            margin: 5px 0 0 0;
+            font-size: 0.95rem;
+        }
+
+        .btn-add {
+            background: #ea580c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-add:hover {
+            background: #dc2626;
+        }
+
+        .cert-container {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #475569;
+            border-radius: 8px;
+            background: #0f172a;
+            padding: 20px 0;
+        }
+       .cert-card {
+    flex-shrink: 0;
+    width: 320px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border-radius: 8px;
+    padding: 15px 20px 20px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.cert-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+.cert-embed-link {
+    display: block;
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    overflow: hidden;
+    cursor: pointer;
+    background: white;
+}
+.cert-embed-link embed {
+    width: 100%;
+    height: 100%;
+}
+.cert-delete {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+.cert-delete:hover {
+    color: #ff4444;
+}
+.cert-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 5px;
+    text-align: center;
+}
+.cert-issuer, .cert-date {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-align: center;
+    margin: 0;
+}
+        .cert-scroll {
+            display: flex;
+            animation: scrollInfinite 30s linear infinite;
+            gap: 15px;
+            padding: 0 20px;
+        }
+
+        .cert-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollInfinite {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .cert-card {
+            flex-shrink: 0;
+            width: 320px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border-radius: 8px;
+            padding: 20px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .cert-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+
+        .cert-input {
+            width: 100%;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            border-radius: 4px;
+            color: white;
+            padding: 8px 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .cert-input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .cert-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+        }
+
+        .cert-date {
+            font-size: 0.8rem;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+
+        .cert-delete {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.8);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .cert-delete:hover {
+            color: #ff4444;
+        }
+
+        /* RESOURCES SECTION */
+        .resources-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .resource-box {
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .resource-box.green {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .resource-box h3 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #06b6d4;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .resource-box.green h3 {
+            color: #10b981;
+        }
+
+        .resource-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px;
+            background: #334155;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .resource-item:hover {
+            background: #475569;
+        }
+
+        .resource-icon {
+            font-size: 1.2rem;
+            color: #06b6d4;
+            flex-shrink: 0;
+        }
+
+        .resource-box.green .resource-icon {
+            color: #10b981;
+        }
+
+        .resource-content strong {
+            color: white;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .resource-content p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid #475569;
+            background: #0f172a;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        footer h4 {
+            font-weight: bold;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        footer p, footer a {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #60a5fa;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin: 8px 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #475569;
+            padding-top: 20px;
+            margin-top: 30px;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            .section-title { font-size: 1.5rem; }
+            .resources-section { grid-template-columns: 1fr; }
+            .cert-card { width: 280px; }
+            .cert-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#">
+                <div class="logo-circle">H</div>
+                <div class="brand-text">
+                    <h1>HAJAR PORTFOLIO</h1>
+                    <p>L3 MIAGE</p>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Accueil</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#rubriques">
+                            Mes Travaux
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#rubriques">TP Demandés</a></li>
+                            <li><a class="dropdown-item" href="#rubriques">TD Demandés</a></li>
+                            <li><a class="dropdown-item" href="#rubriques">Notes de Cours</a></li>
+                            <li><a class="dropdown-item" href="#rubriques">Documents SI</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">À propos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="badge-header">
+                <i class="fas fa-book"></i> Introduction aux Systèmes d'Information • Semestre 5
+            </div>
+            <h2>Portfolio de Hajar</h2>
+            <p>Bienvenue ! Ce portfolio regroupe tous mes travaux pratiques, travaux dirigés, notes de cours, documents SI, certifications et autres ressources académiques. Un espace centralisé pour présenter mes productions en L3 MIAGE de manière professionnelle et organisée.</p>
+            <button class="btn-discover" onclick="document.getElementById('rubriques').scrollIntoView({behavior: 'smooth'})">
+                Découvrir
+            </button>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="about-box">
+            <h3><i class="fas fa-user-graduate"></i> À propos de Moi</h3>
+            <p>Je suis <strong>Hajar</strong>, étudiante en <strong>L3 MIAGE</strong> (Méthodes Informatiques et Applications Gestionnaires de l'Entreprise).</p>
+            <p>Ce portfolio regroupe tous mes travaux académiques du module <strong>Introduction aux Systèmes d'Information</strong>. Vous y trouverez mes travaux pratiques et dirigés, mes notes de cours, mes documents liés aux systèmes d'information, mes certifications professionnelles, ainsi que mon projet final documenté avec soutenance.</p>
+            <p><strong>Modalités d'Évaluation :</strong></p>
+            <ul>
+                <li>✓ Contrôle Continu : 50% de la moyenne</li>
+                <li>✓ Examen : 50% (2 heures)</li>
+                <li>✓ Utilisation de l'IA : Autorisée</li>
+            </ul>
+            <p style="font-size: 0.9rem; color: #cbd5e1; margin-top: 20px;"><em>Tous les travaux ont été codés manuellement en HTML5, CSS3 et JavaScript sans utilisation de CMS, avec versionning Git.</em></p>
+        </div>
+    </section>
+
+    <!-- RUBRIQUES SECTION -->
+    <section id="rubriques" class="rubriques-section container-fluid">
+        <div class="container">
+            <h2 class="section-title">Mes Rubriques</h2>
+            <p class="section-subtitle">Déposez vos documents - Les professeurs pourront les télécharger</p>
+            
+            <div class="row g-4 mb-5">
+                <!-- TP Demandés -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="rubrique-card">
+                        <div class="rubrique-header tp">
+                            <div>
+                                <i class="fas fa-laptop rubrique-icon"></i>
+                                <div class="rubrique-title">TP Demandés</div>
+                                <div class="rubrique-desc">Tous les travaux pratiques</div>
+                            </div>
+                            <span class="rubrique-count" data-rubrique="1">0</span>
+                        </div>
+                        <div class="rubrique-content">
+                            <label class="upload-area" for="file-1">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p class="upload-text">Cliquez pour déposer</p>
+                            </label>
+                            <input type="file" id="file-1" class="file-input" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx">
+                            <div class="files-list" id="files-1">
+                                <p class="no-files">Aucun document</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TD Demandés -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="rubrique-card">
+                        <div class="rubrique-header td">
+                            <div>
+                                <i class="fas fa-book rubrique-icon"></i>
+                                <div class="rubrique-title">TD Demandés</div>
+                                <div class="rubrique-desc">Tous les travaux dirigés</div>
+                            </div>
+                            <span class="rubrique-count" data-rubrique="2">0</span>
+                        </div>
+                        <div class="rubrique-content">
+                            <label class="upload-area" for="file-2">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p class="upload-text">Cliquez pour déposer</p>
+                            </label>
+                            <input type="file" id="file-2" class="file-input" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx">
+                            <div class="files-list" id="files-2">
+                                <p class="no-files">Aucun document</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes de Cours -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="rubrique-card">
+                        <div class="rubrique-header notes">
+                            <div>
+                                <i class="fas fa-pen-fancy rubrique-icon"></i>
+                                <div class="rubrique-title">Notes de Cours</div>
+                                <div class="rubrique-desc">Notes claires et structurées</div>
+                            </div>
+                            <span class="rubrique-count" data-rubrique="3">0</span>
+                        </div>
+                        <div class="rubrique-content">
+                            <label class="upload-area" for="file-3">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p class="upload-text">Cliquez pour déposer</p>
+                            </label>
+                            <input type="file" id="file-3" class="file-input" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx">
+                            <div class="files-list" id="files-3">
+                                <p class="no-files">Aucun document</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documents SI -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="rubrique-card">
+                        <div class="rubrique-header docs">
+                            <div>
+                                <i class="fas fa-file-alt rubrique-icon"></i>
+                                <div class="rubrique-title">Documents SI</div>
+                                <div class="rubrique-desc">Système d'information</div>
+                            </div>
+                            <span class="rubrique-count" data-rubrique="4">0</span>
+                        </div>
+                        <div class="rubrique-content">
+                            <label class="upload-area" for="file-4">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p class="upload-text">Cliquez pour déposer</p>
+                            </label>
+                            <input type="file" id="file-4" class="file-input" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx">
+                            <div class="files-list" id="files-4">
+                                <p class="no-files">Aucun document</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet Final -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="rubrique-card">
+                        <div class="rubrique-header projet">
+                            <div>
+                                <i class="fas fa-rocket rubrique-icon"></i>
+                                <div class="rubrique-title">Projet Final</div>
+                                <div class="rubrique-desc">Projet intégrant les compétences</div>
+                            </div>
+                            <span class="rubrique-count" data-rubrique="5">0</span>
+                        </div>
+                        <div class="rubrique-content">
+                            <label class="github-label">Lien GitHub du Projet</label>
+                            <input type="text" id="github-link" class="github-input" placeholder="https://github.com/votre-repo">
+                            
+                            <label class="upload-area" for="file-5" style="margin-bottom: 15px; margin-top: 15px;">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p class="upload-text">Déposer le rapport (PDF)</p>
+                            </label>
+                            <input type="file" id="file-5" class="file-input" multiple accept=".pdf,.doc,.docx">
+                            <div class="files-list" id="files-5">
+                                <p class="no-files">Aucun document</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diaporama Soutenance -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="rubrique-card">
+                        <div class="rubrique-header diapo">
+                            <div>
+                                <i class="fas fa-presentation rubrique-icon"></i>
+                                <div class="rubrique-title">Diaporama Soutenance</div>
+                                <div class="rubrique-desc">Présentation PowerPoint</div>
+                            </div>
+                            <span class="rubrique-count" data-rubrique="6">0</span>
+                        </div>
+                        <div class="rubrique-content">
+                            <label class="upload-area" for="file-6">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p class="upload-text">Déposer la présentation</p>
+                            </label>
+                            <input type="file" id="file-6" class="file-input" multiple accept=".ppt,.pptx,.pdf">
+                            <div class="files-list" id="files-6">
+                                <p class="no-files">Aucun document</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Autres Ressources -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="rubrique-card">
+                        <div class="rubrique-header ressources">
+                            <div>
+                                <i class="fas fa-link rubrique-icon"></i>
+                                <div class="rubrique-title">Autres Ressources</div>
+                                <div class="rubrique-desc">Ressources complémentaires</div>
+                            </div>
+                            <span class="rubrique-count" data-rubrique="7">0</span>
+                        </div>
+                        <div class="rubrique-content">
+                            <label class="upload-area" for="file-7">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p class="upload-text">Cliquez pour déposer</p>
+                            </label>
+                            <input type="file" id="file-7" class="file-input" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx">
+                            <div class="files-list" id="files-7">
+                                <p class="no-files">Aucun document</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CERTIFICATIONS -->
+            <div class="certifications-section">
+                <div class="cert-header">
+                    <div class="cert-header-left">
+                        <h2>Mes Certifications</h2>
+                        <p>Valorisez vos compétences avec vos attestations (<span id="cert-count">4</span>)</p>
+                    </div>
+                    <button class="btn-add" onclick="addCertification()">+ Ajouter</button>
+                </div>
+
+                <div class="cert-container">
+                    <div class="cert-scroll" id="cert-scroll">
+                        <!-- Certifications seront ajoutées par JS -->
+                    </div>
+                </div>
+            </div>
+
+           <div class="resources-section">
+
+  <!-- ==================== -->
+  <!-- COLONNE 1 : RESSOURCES SI -->
+  <!-- ==================== -->
+  <div class="resource-box">
+    <h3><i class="fas fa-building"></i> Ressources SI</h3>
+
+    <div class="resource-item">
+      <div class="resource-icon">→</div>
+      <div class="resource-content">
+        <strong>Spécifications Fonctionnelles</strong>
+        <p>
+          Différence entre <b>SFG</b> (besoins métier) et <b>SFD</b> (implémentation technique).  
+          
+        </p>
+      </div>
+    </div>
+
+    <div class="resource-item">
+      <div class="resource-icon">→</div>
+      <div class="resource-content">
+        <strong>Modélisation UML</strong>
+        <p>
+          Cas d’utilisation, diagrammes de classes et de séquence pour décrire les processus métier.  
+         
+        </p>
+      </div>
+    </div>
+
+    <div class="resource-item">
+      <div class="resource-icon">→</div>
+      <div class="resource-content">
+        <strong>PGI / ERP</strong>
+        <p>
+          Étude du PGI <b>Odoo</b> : gestion intégrée des ventes, stocks et RH.  
+          
+        </p>
+      </div>
+    </div>
+
+    <div class="resource-item">
+      <div class="resource-icon">→</div>
+      <div class="resource-content">
+        <strong>Architecture du SI</strong>
+        <p>
+          Couches métier, applicative et technique. Importance de l’interopérabilité et de la sécurité des données.
+        </p>
+      </div>
+    </div>
+
+    <div class="resource-item">
+      <div class="resource-icon">→</div>
+      <div class="resource-content">
+        <strong>Processus Métier (BPMN)</strong>
+        <p>
+          Représentation des processus internes : réservation, commande, facturation.  
+          
+        </p>
+      </div>
+    </div>
+
+    <div class="resource-item">
+      <div class="resource-icon">→</div>
+      <div class="resource-content">
+        <strong>Base de Données</strong>
+        <p>
+          Conception MCD / MLD, contraintes, et intégration au système d’information.  
+        
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== -->
+  <!-- COLONNE 2 : DOCUMENTS ET RÉFÉRENCES -->
+  <!-- ==================== -->
+  <div class="resource-box green">
+    <h3><i class="fas fa-book"></i> Documents et Références</h3>
+
+    <div class="resource-item">
+      <div class="resource-icon">📄</div>
+      <div class="resource-content">
+        <strong>Livrables du Module</strong>
+        <p>
+          SFG & SFD, diagrammes UML, étude PGI Odoo, architecture SI.  
+         
+        </p>
+      </div>
+    </div>
+
+    <div class="resource-item">
+      <div class="resource-icon">📄</div>
+      <div class="resource-content">
+        <strong>Normes et Bonnes Pratiques</strong>
+        <p>
+          ISO 27001 (sécurité), ISO 9001 (qualité), ITIL v4 (gestion des services), COBIT 2019 (gouvernance).  
+          
+        </p>
+      </div>
+    </div>
+
+    <div class="resource-item">
+      <div class="resource-icon">📄</div>
+      <div class="resource-content">
+        <strong>Documentation Technique</strong>
+        <p>
+          Structure du SI, schémas, règles de gestion, conception fonctionnelle.  
+          
+        </p>
+      </div>
+    </div>
+
+    <div class="resource-item">
+      <div class="resource-icon">📄</div>
+      <div class="resource-content">
+        <strong>Architecture IT</strong>
+        <p>
+          Schémas techniques et infrastructures réseau.  
+         
+        </p>
+      </div>
+    </div>
+
+    <div class="resource-item">
+      <div class="resource-icon">📄</div>
+      <div class="resource-content">
+        <strong>Ressources en Ligne</strong>
+        <p>
+          <a href="https://www.odoo.com" target="_blank">Odoo – PGI open source</a><br>
+          <a href="https://app.diagrams.net" target="_blank">Draw.io – Outil UML</a><br>
+          <a href="https://openclassrooms.com/fr/courses/si" target="_blank">Cours OpenClassrooms – SI</a><br>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <h4>Portfolio</h4>
+                    <p>Portfolio académique professionnel centralisé pour présenter mes productions en L3 MIAGE</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Module</h4>
+                    <p>Introduction aux Systèmes d'Information • Semestre 5 • L3 MIAGE</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Liens</h4>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 HAJAR PORTFOLIO • L3 MIAGE • Créé avec passion pour l'académique
+            </div>
+        </div>
+    </footer>
+    <script>
+    // DATA STORAGE
+    const files = {
+        1: [
+            {
+                id: 101,
+                name: 'TP-GANT-FAIT.pdf',
+                size: '0.5',
+                date: '2025-11-07',
+                file: new File([], 'TP-GANT-FAIT.pdf')
+            },
+            {
+                id: 102,
+                name: 'TP-ODOO.pdf',
+                size: '0.7',
+                date: '2025-11-07',
+                file: new File([], 'TP-ODOO.pdf')
+            },
+            {
+                id : 103,
+                name: 'PGI-EXERCICE-EXCEL.xlsx',
+                size : 'O.8',
+                date:'2025-11-07',
+                file:new File([], 'PGI-EXERCICE-EXCEL.xlsx') 
+            },
+            {
+                id : 104,
+                name: 'TP-USER-CASE.pdf',
+                size : '0.6',
+                date:'2025-11-07',
+                file:new File([], 'TP-USER-CASE.pdf')
+            }
+        ],
+        2: [
+            { id: 101, name: 'TD3-MCD-MERISE.pdf', size: 0.9,date: '2025-11-07', file: new File([], 'TD3-MCD-MERISE.pdf') },
+            { id: 102, name: 'TD-PGI.pdf', size: 0.9, date: '2025-11-07', file: new File([], 'TD-PGI.pdf') },
+            { id: 103, name: 'TD1-SI.pdf', size: 0.9, date: '2025-11-07', file: new File([], 'TD1-SI.pdf') },
+            { id: 104, name: 'TD2-si.pdf', size: 0.9, date: '2025-11-07', file: new File([], 'TD2-si.pdf') },
+            { id: 105, name: 'TD4-DOSSIER3-FLUX-PROCESUS DE GESTION.pdf', size:1.2, date: '2025-11-07', file: new File([], 'TD4-DOSSIER3-FLUX-PROCESUS DE GESTION.pdf')},
+            { id: 106, name: 'Gestion du projet-TD.pdf', size:1.2, date: '2025-11-07', file: new File([], 'Gestion du projet-TD.pdf')},
+            { id: 107, name: 'Les phases SI-TD.pdf', size:1.2, date: '2025-11-07', file: new File([], 'Les phases SI-TD.pdf')},
+            { id: 108, name: 'A2-TDD2-PROCESUS-ORGANIS.pdf', size:1.2, date: '2025-11-07', file: new File([], 'A2-TDD2-PROCESUS-ORGANIS.pdf')}
+        ],
+    
+     3: [
+            { id: 301, name: 'COURS1-SI.pdf',        size: '1.2', date: '2025-11-07', file: new File([], 'COURS1-SI.pdf') },
+            { id: 302, name: 'COURS2-SI.pdf',       size: '1.7', date: '2025-11-07', file: new File([], 'COURS2-SI.pdf') },
+            { id: 303, name: 'COURS3-SI.pdf',       size: '1.4', date: '2025-11-07', file: new File([], 'COURS3-SI.pdf') },
+            { id: 304, name : 'COURS4-DIFFERENCE ENTRE SFG ET SFD.pdf', size: '1.0', date: '2025-11-07', file: new File([], 'COURS4-DIFFERENCE ENTRE SFG ET SFD.pdf')},
+            { id: 305, name : 'cours use case.pdf', size: '1.3', date: '2025-11-07', file: new File([], 'cours use case.pdf')},
+            {id: 306, name : 'cours gestion de projet version étudiant.pdf', size: '1.5', date: '2025-11-07', file: new File([], 'cours gestion de projet version étudiant.pdf')},
+            
+        ],
+         4: [
+            // nouveau document ajouté dans "Documents SI"
+            { id: 401, name: 'Les-LIVRABLES-SI.pdf', size: '1.1', date: '2025-11-07', file: new File([], 'Les-LIVRABLES-SI.pdf')}
+        
+        ],
+    };
+   const certs = [
+    { id: 1, name: 'Certification 1', issuer: 'SoloLearn', date: '2024', fileUrl: 'AI DATA.pdf' },
+    { id: 2, name: 'Certification 2', issuer: 'SoloLearn', date: '2024', fileUrl: 'CERTIFICAT DATA.pdf' },
+    { id: 3, name: 'Certification 3', issuer: 'SoloLearn', date: '2024', fileUrl: 'CERTIFICAT PYTHON.pdf' },
+    { id: 4, name: 'Certification 4', issuer: 'SoloLearn', date: '2024', fileUrl: 'SQL.pdf' }
+];
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        for (let i = 1; i <= 7; i++) {
+            if (!files[i]) files[i] = [];
+            const input = document.getElementById(`file-${i}`);
+            input.addEventListener('change', (e) => handleFileUpload(i, e));
+            renderFiles(i);
+        }
+        renderCertifications();
+    });
+
+    function handleFileUpload(rubriqueId, event) {
+        const fileList = event.target.files;
+        for (let file of fileList) {
+            const fileObj = {
+                id: Date.now() + Math.random(),
+                name: file.name,
+                size: (file.size / 1024 / 1024).toFixed(2),
+                date: new Date().toLocaleDateString('fr-FR'),
+                file: file
+            };
+            files[rubriqueId].push(fileObj);
+        }
+        renderFiles(rubriqueId);
+    }
+
+    function renderFiles(rubriqueId) {
+        const container = document.getElementById(`files-${rubriqueId}`);
+        const count = document.querySelector(`[data-rubrique="${rubriqueId}"]`);
+        
+        if (files[rubriqueId].length === 0) {
+            container.innerHTML = '<p class="no-files">Aucun document</p>';
+            count.textContent = '0';
+            return;
+        }
+
+        count.textContent = files[rubriqueId].length;
+        container.innerHTML = files[rubriqueId].map(f => `
+            <div class="file-item">
+                <div class="file-info">
+                    <i class="fas fa-file-pdf"></i>
+                    <div class="file-details">
+                        <div class="file-name">${f.name}</div>
+                        <div class="file-meta">${f.size} MB • ${f.date}</div>
+                    </div>
+                </div>
+                <div class="file-actions">
+                    <a class="btn-icon download" href="${f.name}" download>
+                        <i class="fas fa-download"></i>
+                    </a>
+                    <button class="btn-icon delete" onclick="deleteFile(${rubriqueId}, ${f.id})">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function deleteFile(rubriqueId, fileId) {
+        files[rubriqueId] = files[rubriqueId].filter(f => f.id !== fileId);
+        renderFiles(rubriqueId);
+    }
+
+    // CERTIFICATIONS
+  function renderCertifications() {
+    const container = document.getElementById('cert-scroll');
+    const html = certs.map(c => `
+        <div class="cert-card" title="${c.name} - ${c.issuer} (${c.date})">
+            <a href="${c.fileUrl}" target="_blank" class="cert-embed-link" aria-label="Ouvrir ${c.name}">
+                <embed src="${c.fileUrl}#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" />
+            </a>
+            <div class="cert-name">${c.name}</div>
+            <div class="cert-issuer">${c.issuer}</div>
+            <div class="cert-date">${c.date}</div>
+            <button class="cert-delete" onclick="removeCert(${c.id})" title="Supprimer cette certification">
+                <i class="fas fa-trash"></i>
+            </button>
+        </div>
+    `).join('');
+    container.innerHTML = html + html;  // Double pour l'animation scroll
+    document.getElementById('cert-count').textContent = certs.length;
+}
+    function addCertification() {
+        const newId = Math.max(...certs.map(c => c.id), 0) + 1;
+        certs.push({ id: newId, name: 'Nouvelle Certification', issuer: 'Organisme', date: new Date().getFullYear().toString() });
+        renderCertifications();
+    }
+
+    function updateCert(id, field, value) {
+        const cert = certs.find(c => c.id === id);
+        if (cert) cert[field] = value;
+        renderCertifications();
+    }
+
+    function removeCert(id) {
+        certs.splice(certs.findIndex(c => c.id === id), 1);
+        renderCertifications();
+    }
+
+    document.getElementById('github-link').addEventListener('change', function() {
+        localStorage.setItem('github-link', this.value);
+    });
+
+    window.addEventListener('load', function() {
+        const savedLink = localStorage.getItem('github-link');
+        if (savedLink) document.getElementById('github-link').value = savedLink;
+    });
+</script>
+
+    
+</body>
+</html>
