@@ -1233,22 +1233,32 @@
     
 };
    const certs = [
-    { id: 1, name: 'Certification 1', issuer: 'SoloLearn', date: '2024', fileUrl: 'AI DATA.pdf' },
-    { id: 2, name: 'Certification 2', issuer: 'SoloLearn', date: '2024', fileUrl: 'CERTIFICAT DATA.pdf' },
-    { id: 3, name: 'Certification 3', issuer: 'SoloLearn', date: '2024', fileUrl: 'CERTIFICAT PYTHON.pdf' },
+    { id: 1, name: 'Certification 1', issuer: 'SoloLearn', date: '2024', fileUrl: 'AI_DATA.pdf' },
+    { id: 2, name: 'Certification 2', issuer: 'SoloLearn', date: '2024', fileUrl: 'CERTIFICAT_DATA.pdf' },
+    { id: 3, name: 'Certification 3', issuer: 'SoloLearn', date: '2024', fileUrl: 'CERTIFICAT_PYTHON.pdf' },
     { id: 4, name: 'Certification 4', issuer: 'SoloLearn', date: '2024', fileUrl: 'SQL.pdf' }
 ];
 
 
     document.addEventListener('DOMContentLoaded', function() {
-        for (let i = 1; i <= 7; i++) {
-            if (!files[i]) files[i] = [];
-            const input = document.getElementById(`file-${i}`);
+    for (let i = 1; i <= 7; i++) {
+        if (!files[i]) files[i] = [];
+
+        // ✅ on ne touche pas aux rubriques statiques (Projet Final=5, Diapo=6)
+        if (i === 5 || i === 6) continue;
+
+        const input = document.getElementById(`file-${i}`);
+        if (input) {
             input.addEventListener('change', (e) => handleFileUpload(i, e));
-            renderFiles(i);
         }
-        renderCertifications();
-    });
+
+        renderFiles(i);
+    }
+
+    renderCertifications();
+});
+
+
 
     function handleFileUpload(rubriqueId, event) {
         const fileList = event.target.files;
@@ -1338,14 +1348,18 @@
         renderCertifications();
     }
 
-    document.getElementById('github-link').addEventListener('change', function() {
+   const githubInput = document.getElementById('github-link');
+if (githubInput) {
+    githubInput.addEventListener('change', function() {
         localStorage.setItem('github-link', this.value);
     });
 
     window.addEventListener('load', function() {
         const savedLink = localStorage.getItem('github-link');
-        if (savedLink) document.getElementById('github-link').value = savedLink;
+        if (savedLink) githubInput.value = savedLink;
     });
+}
+
 </script>
 
     
