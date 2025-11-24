@@ -779,7 +779,7 @@
     <section id="about" class="about-section">
         <div class="about-box">
             <h3><i class="fas fa-user-graduate"></i> À propos de Moi</h3>
-            <p>Je suis <strong>Hajar</strong>, étudiante en <strong>L3 MIAGE</strong> (Méthodes Informatiques et Applications Gestionnaires de l'Entreprise).</p>
+            <p>Je suis <strong>Hajar</strong>, étudiante en <strong>L3 MIAGE</strong> (Méthodes Informatiques appliquées aux gestions des entreprises ).</p>
             <p>Ce portfolio regroupe tous mes travaux académiques du module <strong>Introduction aux Systèmes d'Information</strong>. Vous y trouverez mes travaux pratiques et dirigés, mes notes de cours, mes documents liés aux systèmes d'information, mes certifications professionnelles, ainsi que mon projet final documenté avec soutenance.</p>
             <p><strong>Modalités d'Évaluation :</strong></p>
             <ul>
@@ -896,30 +896,51 @@
 
                 <!-- Projet Final -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="rubrique-card">
-                        <div class="rubrique-header projet">
-                            <div>
-                                <i class="fas fa-rocket rubrique-icon"></i>
-                                <div class="rubrique-title">Projet Final</div>
-                                <div class="rubrique-desc">Projet intégrant les compétences</div>
-                            </div>
-                            <span class="rubrique-count" data-rubrique="5">0</span>
-                        </div>
-                        <div class="rubrique-content">
-                            <label class="github-label">Lien GitHub du Projet</label>
-                            <input type="text" id="github-link" class="github-input" placeholder="https://github.com/votre-repo">
-                            
-                            <label class="upload-area" for="file-5" style="margin-bottom: 15px; margin-top: 15px;">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <p class="upload-text">Déposer le rapport (PDF)</p>
-                            </label>
-                            <input type="file" id="file-5" class="file-input" multiple accept=".pdf,.doc,.docx">
-                            <div class="files-list" id="files-5">
-                                <p class="no-files">Aucun document</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="rubrique-card">
+        <div class="rubrique-header projet">
+            <div>
+                <i class="fas fa-rocket rubrique-icon"></i>
+                <div class="rubrique-title">Projet Final</div>
+                <div class="rubrique-desc">Projet intégrant les compétences</div>
+            </div>
+            <span class="rubrique-count" data-rubrique="5">1</span>
+        </div>
+
+        <div class="rubrique-content">
+
+            <!-- Lien vers ton Portfolio -->
+            <label class="github-label">Portfolio</label>
+            <a href="https://hajar-jlt23.github.io/HAJAR-PORTFOLIO-L3MIAGE/" 
+               class="github-input" 
+               style="display:block; margin-bottom:15px;">
+               https://github.com/Hajar-JLT23/HAJAR-PORTFOLIO-L3MIAGE-
+            </a>
+
+            <!-- Lien GitHub du Projet -->
+            <label class="github-label">Lien GitHub du Projet Web</label>
+            <a href="https://github.com/MANAL-nl/g_event" 
+               class="github-input" 
+               style="display:block; margin-bottom:15px;">
+               https://github.com/MANAL-nl/g_event
+            </a>
+
+            <!-- Rapport PDF -->
+            <label class="github-label">Rapport du Projet SI Final</label>
+            <a href="RAPPORT DE PROJET-SI-FINALE.pdf" 
+               download 
+               class="github-input" 
+               style="display:block; margin-bottom:10px;">
+               Télécharger le rapport (PDF)
+            </a>
+
+            <div class="files-list" id="files-5">
+                <p class="no-files">1 document</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
                 <!-- Diaporama Soutenance -->
                 <div class="col-lg-4 col-md-6">
@@ -932,19 +953,16 @@
                             </div>
                             <span class="rubrique-count" data-rubrique="6">0</span>
                         </div>
-                        <div class="rubrique-content">
-                            <label class="upload-area" for="file-6">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <p class="upload-text">Déposer la présentation</p>
-                            </label>
-                            <input type="file" id="file-6" class="file-input" multiple accept=".ppt,.pptx,.pdf">
-                            <div class="files-list" id="files-6">
-                                <p class="no-files">Aucun document</p>
-                            </div>
+                         <div class="rubrique-content">
+                        <div class="files-list" id="files-6">
+                     <a href="SOUTENANCE-PROJET-SI-FINALE.pptx" download>
+                        Télécharger la présentation PowerPoint
+                       </a>
                         </div>
-                    </div>
-                </div>
-
+                         </div>
+                          </div>
+                           </div> 
+            </div>
                 <!-- Autres Ressources -->
                 <div class="col-lg-4 col-md-6">
                     <div class="rubrique-card">
@@ -1212,7 +1230,8 @@
             { id: 401, name: 'Les-LIVRABLES-SI.pdf', size: '1.1', date: '2025-11-07', file: new File([], 'Les-LIVRABLES-SI.pdf')}
         
         ],
-    };
+    
+};
    const certs = [
     { id: 1, name: 'Certification 1', issuer: 'SoloLearn', date: '2024', fileUrl: 'AI DATA.pdf' },
     { id: 2, name: 'Certification 2', issuer: 'SoloLearn', date: '2024', fileUrl: 'CERTIFICAT DATA.pdf' },
